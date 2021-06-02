@@ -1,0 +1,18 @@
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  background: #231f1f;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 50px;
+  background: #fff;
+}
+.swiper-slide:nth-child(2n+1) {
+  background: #bef3d7;
+}
