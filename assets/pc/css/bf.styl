@@ -1,3 +1,33 @@
 .bf
-  height 606px
-  background #007aff
+  $w = 368px
+  $h = 606px
+  $tab = 45px
+  $panel = $h - $tab
+  height $h
+
+  .bf-tab
+    width 100%
+    height $tab
+    display flex
+    padding-left 6px
+
+    &-item
+      display flex
+      justify-content center
+      align-items center
+      width ($w / 3)
+      padding 10px
+      margin-right 10px
+      border-top-left-radius 6px
+      border-top-right-radius 6px
+      font-size: 22px;
+      color yellow
+      font-weight bolder
+      -webkit-text-stroke-width: 1.4px;
+      -webkit-text-stroke-color: #d93f42;
+    &-active
+      background #fff
+
+  .bf-panel
+    height $panel
+    padding 10px
