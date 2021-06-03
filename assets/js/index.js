@@ -1,4 +1,5 @@
-var API_URL = 'https://match.anhuity.com.cn'
+// var API_URL = 'https://match.anhuity.com.cn'
+var API_URL = 'http://localhost:8889'
 
 window.$http = function (opts, callback) {
     window.nanoajax.ajax({
