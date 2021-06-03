@@ -1,3 +1,12 @@
 .qwb
-  height 300px
-  background #32a6d7
+  width $w = 790px
+  height $h = 300px
+
+  .qwb-bd
+    display flex
+    justify-content space-between
+    // h - title - title/bottom
+    height ($h - 35px - 10px)
+
+  .qwb-panel
+    width ($w / 2) - 5px
