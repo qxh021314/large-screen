@@ -5,6 +5,17 @@
 $deviceWidth = 1280px
 $deviceHeight = 720px
 
+html, body
+  position relative
+  height 100%
+
+.pc-root
+  width 100%
+  height 100%
+  position relative
+  background url("../images/bg.png") 0 0 no-repeat
+  background-size cover
+
 /* Common */
 .supper-title
   font-size: 20px;
@@ -13,9 +24,6 @@ $deviceHeight = 720px
   -webkit-text-stroke-width: 1.4px;
   -webkit-text-stroke-color: #d93f42;
   letter-spacing: 5px;
-
-.pc-root
-  position relative
 
 /* 各模块样式 */
 @import "qwb.styl"
