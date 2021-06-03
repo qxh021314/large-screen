@@ -22,16 +22,13 @@ window.$http = function (opts, callback) {
 }
 
 
-window.onload = function () {
-    var $swiper = new Swiper(".mySwiper", {
-        slidesPerView: 3,
-        spaceBetween: 0,
-        loop: true,
-        speed: 1000,
-        autoplay: {
-            delay: 1000,
-            disableOnInteraction: true
-        }
-    })
-    window.$swiper = $swiper
-}
+window.$swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 0,
+    loop: true,
+    speed: 1000,
+    autoplay: {
+        delay: 1000,
+        disableOnInteraction: true
+    }
+})
