@@ -9,12 +9,12 @@ window.$http = function (opts, callback) {
         body: window.Tools.stringify(opts.body)
     }, function (status, response) {
         try {
-            var res = response
-            if (typeof res === 'string') res = JSON.parse(response)
             if (status === 200) {
+                var res = response
+                if (typeof res === 'string') res = JSON.parse(response)
                 callback(res)
             } else {
-                throw Error(status)
+                console.error(response)
             }
         } catch (e) {
             console.error(e)
