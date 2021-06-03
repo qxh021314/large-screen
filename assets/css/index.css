@@ -1,18 +1,33 @@
+/* Swiper */
 html,
 body {
   position: relative;
   height: 100%;
 }
 .swiper-container {
-  width: 100%;
-  height: 100%;
-  background: #231f1f;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 960px;
+  height: 640px;
+  background: #ccc;
 }
 .swiper-slide {
   text-align: center;
-  font-size: 50px;
+  border: 5px solid #ccc;
+  word-break: break-all;
+  overflow-y: hidden;
+}
+/* Slide - ss-x  */
+.ss-a {
+  background: #e5e5e5;
+}
+.ss-a > img {
+  object-fit: contain;
+}
+.ss-b {
   background: #fff;
 }
-.swiper-slide:nth-child(2n+1) {
-  background: #bef3d7;
+.ss-c {
+  background: #f60;
 }

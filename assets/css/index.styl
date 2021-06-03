@@ -1,18 +1,34 @@
-$deviceW = 960px
+@import "vendor/vendor.styl"
+
+// 设备尺寸
+$deviceWidth = 960px
+$deviceHeight = 640px
+
+/* Swiper */
+$bg-color = #ccc
 
 html, body
   position relative
   height 100%
 
 .swiper-container
-  width 100%
-  height 100%
-  background #231f1f
+  position absolute
+  left 0
+  top 0
+  width $deviceWidth
+  height $deviceHeight
+  background $bg-color
 
 .swiper-slide
   text-align center
-  font-size 50px
-  background #fff
-  &:nth-child(2n+1)
-    background #bef3d7
+  border 5px solid $bg-color
+  word-break break-all
+  overflow-y hidden
+
+
+/* Slide - ss-x  */
+@import "ss-a.styl"
+@import "ss-b.styl"
+@import "ss-c.styl"
+
 
