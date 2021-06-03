@@ -18,6 +18,14 @@ body {
   word-break: break-all;
   overflow-y: hidden;
 }
+.ss-title {
+  font-size: 25px;
+  color: #ff0;
+  font-weight: bolder;
+  -webkit-text-stroke-width: 1.4px;
+  -webkit-text-stroke-color: #d93f42;
+  letter-spacing: 5px;
+}
 /* Slide - ss-x  */
 .ss-a {
   background: #e5e5e5;
@@ -26,7 +34,93 @@ body {
   object-fit: contain;
 }
 .ss-b {
-  background: #fff;
+  background: url("../images/bg-b.png") 0 0 no-repeat;
+  background-size: cover;
+  padding-top: 60px;
+}
+.ss-b--box {
+  padding: 10px 10px;
+}
+.ss-b--row {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: distribute;
+  -moz-box-pack: distribute;
+  -o-box-pack: distribute;
+  -ms-flex-pack: distribute;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+.ss-b--col {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  width: 470px;
+  padding-bottom: 25px;
+  line-height: 1.6;
+  text-align: left;
+}
+.ss-b--title {
+  height: 60px;
+}
+.ss-b--val {
+  font-weight: bold;
+  font-size: 16px;
+}
+.ss-b--unit {
+  font-size: 12px;
+  word-break: keep-all;
+}
+.ss-b--name {
+  font-weight: bold;
+  font-size: 14px;
+}
+.ss-b--icon {
+  width: 46px;
+  height: 46px;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  background-size: 100%;
+}
+.ss-b .icon-cnwd {
+  background-image: url("../images/cnwd.png");
+}
+.ss-b .icon-cnsd {
+  background-image: url("../images/cnsd.png");
+}
+.ss-b .icon-yqhl {
+  background-image: url("../images/yqhl.png");
+}
+.ss-b .icon-pm25 {
+  background-image: url("../images/pm25.png");
+}
+.ss-b .icon-sdyl {
+  background-image: url("../images/sdyl.png");
+}
+.ss-b .icon-gffd {
+  background-image: url("../images/gffd.png");
+}
+.ss-b .icon-co2 {
+  background-image: url("../images/co2.png");
+}
+.ss-b .icon-jybm {
+  background-image: url("../images/jybm.png");
+}
+.ss-b .pd-l-5 {
+  padding-left: 5px;
 }
 .ss-c {
   background: #f60;

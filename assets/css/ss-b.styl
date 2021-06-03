@@ -1,2 +1,49 @@
 .ss-b
-  background #fff
+  background url("../images/bg-b.png") 0 0 no-repeat
+  background-size cover
+  padding-top 60px
+
+  $padding = 10px
+
+  &--box
+    padding 10px $padding
+
+  &--row
+    display flex
+    justify-content space-around
+
+  &--col
+    display flex
+    align-items center
+    width ($deviceWidth - $padding * 2) * 0.5
+    padding-bottom 25px
+    line-height 1.6
+    text-align left
+
+  &--title
+    height 60px
+
+  &--val
+    font-weight bold
+    font-size 16px
+
+  &--unit
+    font-size 12px
+    word-break keep-all
+
+  &--name
+    font-weight bold
+    font-size 14px
+
+  &--icon
+    width 46px
+    height @width
+    flex-shrink 0
+    background-size 100%
+
+  for v in "cnwd" "cnsd" "yqhl" "pm25" "sdyl" "gffd" "co2" "jybm"
+    .icon-{v}
+      background-image url("../images/" + v + ".png")
+
+  .pd-l-5
+    padding-left 5px
