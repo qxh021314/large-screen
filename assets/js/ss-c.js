@@ -1,4 +1,4 @@
-var subjectId = '1397115087446228993'
+var subjectId = '1398863114762678273'
 
 timing();
 let count = 1
@@ -6,7 +6,7 @@ let count = 1
 // 定时
 function timing() {
     window.$http({
-        url: `/platform-api/match/stage/listAll?subjectId=${subjectId}`
+        url: `/api/match/stage/listAll?subjectId=${subjectId}`
     }, function (res) {
         count = res.list.length
         for (let i = 0; i < res.list.length; i++) {
@@ -17,7 +17,7 @@ function timing() {
 
 function listForWeb(stageId, j) {
     window.$http({
-        url: `/platform-api/match/result/listForWeb?stageId=${stageId}&subjectId=${subjectId}`
+        url: `/api/match/result/listForWeb?stageId=${stageId}&subjectId=${subjectId}`
     }, function (res) {
         let html = '';
         let reslist = res.list;
@@ -56,11 +56,11 @@ function createHtml(title, list) {
 
 setInterval(function () {
     UpdateTiming()
-}, 3000)
+}, 90000)
 
 function UpdateTiming() {
     window.$http({
-        url: `/platform-api/match/stage/listAll?subjectId=${subjectId}`
+        url: `/api/match/stage/listAll?subjectId=${subjectId}`
     }, function (res) {
         for (let i = 0; i < res.list.length; i++) {
             UpdateListForWeb(res.list[i].id, i, res.list.length)
@@ -71,15 +71,14 @@ function UpdateTiming() {
 function UpdateListForWeb(stageId, j, length) {
     var ssbEls = window.$swiper.el.querySelectorAll('.ss-c-' + j)
     window.$http({
-        url: `/platform-api/match/result/listForWeb?stageId=${stageId}&subjectId=${subjectId}`
+        url: `/api/match/result/listForWeb?stageId=${stageId}&subjectId=${subjectId}`
     }, function (res) {
         let html = '';
         let reslist = res.list;
         for (let i = 0; i < reslist.length; i++) {
             html += createHtml(reslist[i].title, reslist[i].resultList)
         }
-        let ran = Math.random()
-        html = '<div class="swiper-slide ss-c ss-c-' + j + '">' + ran + html + '</div>';
+        html = '<div class="swiper-slide ss-c ss-c-' + j + '">' + html + '</div>';
         if (count < length && count + 1 === length) {
             count += 1;
             window.$swiper.appendSlide(html)

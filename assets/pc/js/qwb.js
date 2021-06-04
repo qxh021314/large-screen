@@ -1,5 +1,5 @@
 var teamArrList = [],
-    subjectId = '1397115087446228993'
+    subjectId = '1398863114762678273'
 let res = {
     "msg": "success",
     "code": 0,
@@ -426,7 +426,8 @@ let res = {
         }]
     }]
 }
-var API_URL = 'http://localhost:8889'
+var API_URL = 'https://match.anhuity.com.cn'
+// var API_URL = 'http://localhost:8889'
 window.$http = function (opts, callback) {
     window.nanoajax.ajax({
         url: API_URL + opts.url,
@@ -454,7 +455,6 @@ getResultList()
 // 表格数据
 function getResultList() {
     dealTable(res.matchResult, res.teamList)
-
     // window.$http({
     //     url: `/platform-api/match/result/list?subjectId=${subjectId}`
     // }, function (res) {
@@ -548,7 +548,7 @@ function qwbPre(item) {
     })
 
     return `<div class="qwb-pre qwb-panel content-border">
-                    <div>${item.groupName}</div>
+                    <div class="qwb-pre_title">${item.groupName}</div>
                     <table border="1">
                     <thead>
                     <tr class="qwb-pre_tr">
