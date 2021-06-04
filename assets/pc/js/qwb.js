@@ -151,6 +151,7 @@ function qwbPre(item) {
 // 淘汰赛/半决赛
 function tts(metchResult, stageName) {
     let tts = document.querySelector('.qwb-bd')
+    tts.setAttribute('style', 'justify-content: center;')
     tts.classList.add('content-border')
     tts.innerHTML = `<div class="qwb-bd_flex"></div>`
     let ttsbd = document.querySelector('.qwb-bd_flex')
