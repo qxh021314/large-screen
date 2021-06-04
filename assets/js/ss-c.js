@@ -1,5 +1,6 @@
 timing();
 let count = 1
+let bannerCount = 8
 
 // 定时
 function timing() {
@@ -24,7 +25,7 @@ function listForWeb(stageId, j) {
         }
         html = '<div class="ss-parent-card">' + html + '</div>'
         html = '<div class="swiper-slide ss-c ss-c-' + j + '">' + html + '</div>';
-        window.$swiper.appendSlide(html)
+        window.$swiper.addSlide(bannerCount, html)
     })
 }
 
@@ -81,7 +82,8 @@ function UpdateListForWeb(stageId, j, length) {
         html = '<div class="swiper-slide ss-c ss-c-' + j + '">' + html + '</div>';
         if (count < length && j + 1 === length) {
             count += 1;
-            window.$swiper.appendSlide(html)
+            bannerCount += 2
+            window.$swiper.addSlide(bannerCount, html)
         } else {
             for (var i = 0; i < ssbEls.length; i++) {
                 ssbEls[i].innerHTML = html
