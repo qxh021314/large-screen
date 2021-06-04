@@ -2,25 +2,32 @@
 
 
 // 设备尺寸
-$deviceWidth = 1280px
-$deviceHeight = 720px
+$deviceWidth = 1920px
+$deviceHeight = 1080px
 
-$areaLeftW = 790px
-$areaRightW = 368px
+// 计算rem
+rem(n)
+  (n/192)rem
+
+$areaLeftW = rem(1185)
+$areaRightW = rem(552)
 
 html, body
   position relative
   height 100%
 
+html
+  font-size 192px
+
 body
   background url("../images/bg.png") 0 0 no-repeat
-  background-size cover
-  display flex
-  justify-content center
+  background-size 100%
+  font-size 14px
+  background-attachment fixed
 
 .pc-root
   position relative
-  padding 60px 60px 0
+  padding rem(60) rem(60) 0
   display flex
   width $deviceWidth
 

@@ -1,5 +1,5 @@
 .bf
-  $w = 368px
+  $w = $areaRightW
   $h = 606px
   $tab = 45px
   $panel = $h - $tab
@@ -10,6 +10,8 @@
     height $tab
     display flex
     padding-left 6px
+    cursor pointer
+    user-select none
 
     &-item
       display flex
@@ -25,9 +27,14 @@
       font-weight bolder
       -webkit-text-stroke-width: 1.4px;
       -webkit-text-stroke-color: #d93f42;
+
     &-active
       background #fff
 
   .bf-panel
     height $panel
     padding 10px
+
+
+    .hide
+      display none
