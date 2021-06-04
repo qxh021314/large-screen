@@ -54,7 +54,7 @@ function createHtml(title, list) {
 
 setInterval(function () {
     UpdateTiming()
-}, 90000)
+}, 60 * 1000)
 
 function UpdateTiming() {
     window.$http({
