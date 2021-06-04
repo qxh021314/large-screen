@@ -1,6 +1,8 @@
 .qwb
   width $w = 790px
   height $h = 300px
+  display flex
+  justify-content space-around
 
   .qwb-bd
     display flex
@@ -10,3 +12,8 @@
 
   .qwb-panel
     width ($w / 2) - 5px
+    & > table
+      width ($w / 2) - 5px
+      & > tbody > tr
+        height 35px
+        text-align center
