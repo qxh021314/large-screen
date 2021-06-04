@@ -104,7 +104,7 @@ function renderBfPanelB() {
                 html += `
                     <div class="bf-row bf-panel-head">
                         <div>${item.groupName}</div>
-                        <div><img class="bf-icon" src="./assets/pc/images/win.png" alt="">胜</div>
+                        <div class="p-r-icon"><img class="bf-icon" src="./assets/pc/images/win.png" alt="">胜</div>
                         <div>负</div>
                         <div><img class="bf-icon" src="./assets/pc/images/score.png" alt="">积分</div>
                     </div>

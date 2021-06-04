@@ -93,6 +93,15 @@
           text-align center
           font-size 16px
 
+          > div
+            flex 0 0 20%
+
+            &:nth-child(2)
+              flex 0 0 30%
+
+            &:last-child
+              flex 0 0 30%
+
           .win
             color #35aae0
             font-weight bolder
@@ -113,12 +122,13 @@
 
         .bf-icon
           width rem(60)
-          margin-left rem(10)
           vertical-align middle
-
 
       .bf-divider
         width 100%
         height rem(100)
         background url("../images/divider.png") center center no-repeat
         background-size rem(472) rem(68)
+
+      .p-r-icon
+        padding-right rem(60)
