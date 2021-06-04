@@ -1,28 +1,33 @@
 var subjectId = '1397115087446228993'
 
-window.$http({
-    url: `/platform-api/match/stage/listAll?subjectId=${subjectId}`
-}, function (res) {
-    for (let i = 0; i < res.list.length; i++) {
-        listForWeb(res.list[i].id)
-    }
-});
+timing();
+let count = 1
+
+// 定时
+function timing() {
+    window.$http({
+        url: `/platform-api/match/stage/listAll?subjectId=${subjectId}`
+    }, function (res) {
+        count = res.list.length
+        for (let i = 0; i < res.list.length; i++) {
+            listForWeb(res.list[i].id, i)
+        }
+    });
+}
 
 function listForWeb(stageId, j) {
     window.$http({
         url: `/platform-api/match/result/listForWeb?stageId=${stageId}&subjectId=${subjectId}`
     }, function (res) {
         let html = '';
-        let reslist = res.list
-        console.log(reslist)
+        let reslist = res.list;
         for (let i = 0; i < reslist.length; i++) {
             html += createHtml(reslist[i].title, reslist[i].resultList)
         }
-        html = `<div class="swiper-slide ss-c">${html}</div>`
+        html = '<div class="swiper-slide ss-c ss-c-' + j + '">' + html + '</div>';
         window.$swiper.appendSlide(html)
     })
 }
-
 
 function createChildHtml(ateamName, bteamName, ascore, bscore) {
     return ` <div class="ss-c_flex">
@@ -38,19 +43,52 @@ function createChildHtml(ateamName, bteamName, ascore, bscore) {
 
 function createHtml(title, list) {
     console.log(title)
-    function childNode(list) {
-        let childNodeHtml = ''
-        for (let i = 0; i < list.length; i++) {
-            childNodeHtml += createChildHtml(list[i].ateamName, list[i].bteamName, list[i].ascore, list[i].bscore)
-        }
-        return childNodeHtml
+    let childNodeHtml = ''
+    for (let i = 0; i < list.length; i++) {
+        childNodeHtml += createChildHtml(list[i].ateamName, list[i].bteamName, list[i].ascore, list[i].bscore)
     }
-
     return `<div class="ss-c_card">
                <div class="ss-title">${title}</div>
-               ${childNode(list)}
+               ${childNodeHtml}
              </div>
             `
+}
+
+setInterval(function () {
+    UpdateTiming()
+}, 3000)
+
+function UpdateTiming() {
+    window.$http({
+        url: `/platform-api/match/stage/listAll?subjectId=${subjectId}`
+    }, function (res) {
+        for (let i = 0; i < res.list.length; i++) {
+            UpdateListForWeb(res.list[i].id, i, res.list.length)
+        }
+    });
+}
+
+function UpdateListForWeb(stageId, j, length) {
+    var ssbEls = window.$swiper.el.querySelectorAll('.ss-c-' + j)
+    window.$http({
+        url: `/platform-api/match/result/listForWeb?stageId=${stageId}&subjectId=${subjectId}`
+    }, function (res) {
+        let html = '';
+        let reslist = res.list;
+        for (let i = 0; i < reslist.length; i++) {
+            html += createHtml(reslist[i].title, reslist[i].resultList)
+        }
+        let ran = Math.random()
+        html = '<div class="swiper-slide ss-c ss-c-' + j + '">' + ran + html + '</div>';
+        if (count < length && count + 1 === length) {
+            count += 1;
+            window.$swiper.appendSlide(html)
+        } else {
+            for (var i = 0; i < ssbEls.length; i++) {
+                ssbEls[i].innerHTML = html
+            }
+        }
+    })
 }
 
 
