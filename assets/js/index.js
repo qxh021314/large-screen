@@ -1,5 +1,5 @@
-// var API_URL = 'https://match.anhuity.com.cn'
-var API_URL = 'http://localhost:8889'
+var API_URL = 'https://match.anhuity.com.cn'
+// var API_URL = 'http://localhost:8889'
 
 window.$http = function (opts, callback) {
     window.nanoajax.ajax({
@@ -29,7 +29,7 @@ window.$swiper = new Swiper(".mySwiper", {
     loop: true,
     speed: 1000,
     autoplay: {
-        delay: 1000,
+        delay: 15000,
         disableOnInteraction: true
     }
 })
