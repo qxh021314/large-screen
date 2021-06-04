@@ -3,7 +3,7 @@ console.log(window.screen)
 getResultList()
 setTimeout(function () {
     getResultList()
-}, 60 * 1000)
+}, 600 * 1000)
 
 // 表格数据
 function getResultList() {

@@ -140,4 +140,4 @@ onClickBfTab(0)
 setInterval(function () {
     renderBfPanelA()
     renderBfPanelB()
-}, 10 * 1000)
+}, 600 * 1000)

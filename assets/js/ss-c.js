@@ -22,6 +22,7 @@ function listForWeb(stageId, j) {
         for (let i = 0; i < reslist.length; i++) {
             html += createHtml(reslist[i].title, reslist[i].resultList)
         }
+        html = '<div class="ss-parent-card">' + html + '</div>'
         html = '<div class="swiper-slide ss-c ss-c-' + j + '">' + html + '</div>';
         window.$swiper.appendSlide(html)
     })
@@ -54,14 +55,14 @@ function createHtml(title, list) {
 
 setInterval(function () {
     UpdateTiming()
-}, 60 * 1000)
+}, 600 * 1000)
 
 function UpdateTiming() {
     window.$http({
         url: `/api/match/stage/listAll?subjectId=${subjectId}`
     }, function (res) {
         for (let i = 0; i < res.list.length; i++) {
-            UpdateListForWeb(res.list[i].id, i, res.list.length)
+           UpdateListForWeb(res.list[i].id, i, res.list.length)
         }
     });
 }
@@ -71,13 +72,14 @@ function UpdateListForWeb(stageId, j, length) {
     window.$http({
         url: `/api/match/result/listForWeb?stageId=${stageId}&subjectId=${subjectId}`
     }, function (res) {
-        let html = '';
+        let html = ''
         let reslist = res.list;
         for (let i = 0; i < reslist.length; i++) {
             html += createHtml(reslist[i].title, reslist[i].resultList)
         }
+        html = '<div class="ss-parent-card">' + html + '</div>'
         html = '<div class="swiper-slide ss-c ss-c-' + j + '">' + html + '</div>';
-        if (count < length && count + 1 === length) {
+        if (count < length && j + 1 === length) {
             count += 1;
             window.$swiper.appendSlide(html)
         } else {

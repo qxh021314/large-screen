@@ -1,7 +1,7 @@
 timeSetInter()
 setInterval(function () {
     timeSetInter()
-}, 60 * 1000)
+}, 600 * 1000)
 function timeSetInter() {
     window.$http({
         url: '/api/match/venue/queryVenue'
