@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="./assets/css/modern-normalize.min.css">
     <link rel="stylesheet" href="assets/pc/css/index.css">
 
+    <meta name="viewport" content="width=device-width ,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <!--如果不设置width= device-width,则浏览器默认模拟的是980px-->
+    <script>
+        var width = document.documentElement.clientWidth  //如果不设置宽度，浏览器默认模拟的是980px
+        var scale = width / 1920;
+        var css = `html{
+    font-size: ${192 * scale}px
+  }`
+        document.write(`<style>${css}</style>`)
+    </script>
+
     <!-- Ajax -->
     <script src="./assets/js/nanoajax.min.js"></script>
 </head>
