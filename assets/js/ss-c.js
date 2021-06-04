@@ -1,5 +1,3 @@
-var subjectId = '1398863114762678273'
-
 timing();
 let count = 1
 
