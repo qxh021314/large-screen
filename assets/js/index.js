@@ -31,6 +31,6 @@ window.$swiper = new Swiper(".mySwiper", {
     speed: 1000,
     autoplay: {
         delay: 15000,
-        disableOnInteraction: true
+        disableOnInteraction: false
     }
 })
