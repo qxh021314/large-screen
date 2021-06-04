@@ -5,6 +5,9 @@
 $deviceWidth = 1280px
 $deviceHeight = 720px
 
+$areaLeftW = 790px
+$areaRightW = 368px
+
 html, body
   position relative
   height 100%
@@ -12,6 +15,8 @@ html, body
 body
   background url("../images/bg.png") 0 0 no-repeat
   background-size cover
+  display flex
+  justify-content center
 
 .pc-root
   position relative
@@ -20,10 +25,10 @@ body
   width $deviceWidth
 
 .area-l
-  width 790px
+  width $areaLeftW
 
 .area-r
-  width 368px
+  width $areaRightW
   margin-left 10px
 
 /* Common */
