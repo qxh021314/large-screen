@@ -1,19 +1,27 @@
 .ccb
   $bdH = rem(398)
+  $trH = ($areaLeftBdH2 / 6)
 
   .ccb-bd
     height $areaLeftBdH2
     font-size 13px
+    overflow hidden
+
     & > table
+      width 101%
+      margin: 0;
+      padding: 0;
+      background: none;
       border-collapse: collapse;
-      border-radius 8px
-      border-spacing 0 0
-      padding 0
-      margin 0
-      height 100%
-      width 100%
-      border #d97268
+      border-spacing: 0;
+      border none
+      $borderColor = #d97268
+
       tr
-        height 40px
-       td, th
-         text-align center
+        height $trH
+        text-align center
+
+        td, th
+          border-left 1px solid $borderColor
+          border-top 1px solid $borderColor
+

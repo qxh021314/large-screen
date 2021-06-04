@@ -72,8 +72,8 @@ function renderBfPanelA() {
                         ${genDivWithDataList(item.aathleteList || [], '_person')}
                     </div>
                     <div>
-                        <span>${item.ascore}</span>
-                        <span>${item.bscore}</span>
+                        <span class="bf-color-a">${item.ascore}</span>
+                        <span class="bf-color-b">${item.bscore}</span>
                     </div>
                     <div>
                         <div class="_name">${item.bteamName}</div>
