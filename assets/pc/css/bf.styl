@@ -27,7 +27,7 @@
       -webkit-text-stroke-color: #d93f42;
 
     &-active
-      background #fff
+      background #d44245
 
   .bf-panel
     height $panelH
@@ -37,36 +37,71 @@
     .hide
       display none
 
-    .bf-panel-content
-      width 100%
-      height rem(180)
-      display flex
-      justify-content space-around
-      align-items center
-      text-align center
-
-
-      ._name
-        font-size 20px
-        font-weight bolder
-        padding-bottom 5px
-
-      ._person
-        color #666
-        font-size 16px
-        padding 5px 0
-
-      > :nth-child(2)
-        position relative
+    .bf-panel-a
+      .bf-panel-content
+        width 100%
+        height rem(180)
         display flex
         justify-content space-around
         align-items center
-        width rem(170)
-        height rem(90)
-        flex-shrink 0
-        background url('../images/bf-1.png') 0 0 no-repeat
-        background-size 100% 100%
-        span
-          padding-top 5px
-          font-size 24px
+        text-align center
+
+
+        ._name
+          font-size 20px
+          font-weight bolder
+          padding-bottom 5px
+
+        ._person
+          color #666
+          font-size 16px
+          padding 5px 0
+
+        > :nth-child(2)
+          position relative
+          display flex
+          justify-content space-around
+          align-items center
+          width rem(170)
+          height rem(90)
+          flex-shrink 0
+          background url('../images/bf-1.png') 0 0 no-repeat
+          background-size 100% 100%
+
+          span
+            padding-top 5px
+            font-size 24px
+            font-weight bolder
+
+    .bf-panel-b
+      .bf-panel-content
+        width 100%
+        height rem(200)
+        padding $gap 0
+
+        .bf-row
+          width 100%
+          height rem(50)
+          display flex
+          justify-content space-around
+          align-items center
+          text-align center
+          font-size 16px
+
+
+          .win
+            color #35aae0
+            font-weight bolder
+
+          .loss
+            color #fd5059
+            font-weight bolder
+
+          .score
+            color #ffaa00
+            font-weight bolder
+
+        .bf-panel-head
+          text-align center
+          font-size 22px
           font-weight bolder
