@@ -14,7 +14,6 @@ body {
 }
 .swiper-slide {
   text-align: center;
-  border: 5px solid #ccc;
   word-break: break-all;
   overflow-y: hidden;
 }
