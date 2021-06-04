@@ -1,12 +1,11 @@
 .bf
   $w = $areaRightW
-  $tab = rem(70)
-  $panel = rem(830)
-  height $tab + $panel
+  $tabH = rem(90)
+  $panelH = $areaLeftBdH1 + $titleH + $gap * 2 + $areaLeftBdH2
 
   .bf-tab
     width 100%
-    height $tab
+    height $tabH
     display flex
     padding-left 6px
     cursor pointer
@@ -31,7 +30,7 @@
       background #fff
 
   .bf-panel
-    height $panel
+    height $panelH
     padding 10px
 
 

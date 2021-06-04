@@ -1,21 +1,49 @@
 .qwb
   width $w = $areaLeftW
-  height rem(60) + rem(386)
+  $subTitleH = rem(50)
+  $trH = ($areaLeftBdH1 - $subTitleH - rem(10)) * 0.2
 
   .qwb-bd
     display flex
     justify-content space-between
-    height rem(386)
+    height $areaLeftBdH1
+    overflow hidden
 
   .qwb-panel
-    width ($w / 2) - rem(5)
+    width ($w - $gap) * 0.5
+
     & > table
-      width ($w / 2) - rem(5)
-      & > tbody > tr
-        height rem(40)
+      width 100%
+      margin: 0;
+      padding: 0;
+      background: none;
+      border-collapse: collapse;
+      border-spacing: 0;
+      $borderColor = #efefef
+
+      tr
+        height $trH
         text-align center
-.qwb-pre_tr
-  height 40px
-.qwb-pre_title
-  font-weight bold
-  margin 10px
+        border-bottom 1px solid $borderColor
+
+        td, th
+          border-left 1px solid $borderColor
+
+          &:first-child
+            border-left none
+
+        &:first-child
+          border-top 1px solid $borderColor
+
+        &:last-child
+          border-bottom none
+
+
+  .qwb-pre_tr
+    height $trH
+
+  .qwb-pre_title
+    height $subTitleH
+    line-height @height
+    padding-left $gap
+    font-weight bold

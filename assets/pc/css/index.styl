@@ -1,23 +1,26 @@
 @import "./vendor/vendor.styl"
 
 
-// 设备尺寸
+// 设备尺寸 （设计稿尺寸）
 $deviceWidth = 1920px
 $deviceHeight = 1080px
 
-// 计算rem
+// 按设计稿计算rem
 rem(n)
   (n/192)rem
 
 $areaLeftW = rem(1180)
 $areaRightW = rem(552)
 
+$areaLeftBdH1 = rem(389)
+$areaLeftBdH2 = rem(398)
+
+$titleH = rem(50)
+$gap = rem(20)
+
 html, body
   position relative
   height 100%
-
-html
-  font-size 192px
 
 body
   background url("../images/bg.png") 0 0 no-repeat
@@ -37,15 +40,15 @@ body
 
 .area-r
   width $areaRightW
-  margin-left 10px
+  margin-left $gap
 
 /* Common */
 .super-title
   display flex
   align-items center
-  height rem(60)
+  height $titleH
   padding-left 10px
-  margin-bottom rem(10)
+  margin $gap 0
   border-left 8px solid #c61a1e
   font-size: 24px;
   color yellow

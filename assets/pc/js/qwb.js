@@ -549,7 +549,7 @@ function qwbPre(item) {
 
     return `<div class="qwb-pre qwb-panel content-border">
                     <div class="qwb-pre_title">${item.groupName}</div>
-                    <table border="1">
+                    <table>
                     <thead>
                     <tr class="qwb-pre_tr">
                         ${thHtml}
